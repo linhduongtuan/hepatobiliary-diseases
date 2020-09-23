@@ -1,0 +1,7 @@
+torch>=1.1.0
+torchvison==0.2.1
+matplotlib
+scikit-learn
+opencv-python>=3.4.3.18
+numpy
+timm

@@ -1,0 +1,41 @@
+{
+  "name": "resnet101",
+  "train_list": "",
+  "val_list": "",
+  "test_list": "",
+  "data_path": "",
+  "data_path_orig": "",
+  "type": "slitlamp",
+
+  "gpu_ids": "0",
+  "balanced": false,
+  "num_samples": 900,
+  "start_from": "",
+  "mixup": false,
+  "sclera": "",
+  "image": {
+    "width": 648,
+    "height": 432
+  },
+  "model": {
+    "name": "resnet101",
+    "num_classes": 2,
+    "num_attentions": 8,
+    "beta": 1e-4,
+    "category_threshold": 0.48,
+    "milestones": [20, 40, 60],
+    "init_lr": 0.001,
+    "batch_size": 12,
+    "num_workers": 12,
+    "epochs": 80
+  },
+  "test": {
+    "checkpoint": "",
+    "data_path": "",
+    "raw_image_path": ""
+  },
+  "inference": {
+    "checkpoint": "",
+    "data_path": ""
+  }
+}
