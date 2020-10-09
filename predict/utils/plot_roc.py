@@ -64,24 +64,24 @@ def all_roc_plot(root,name,diseases_types,colors,confidence_set):
 
 
 if __name__ == '__main__':
-    root_slitlamp = 'D:\ZOC_DATA\liver_disease2\models\\slitlamp\\all_scores\\'
-    root_fundus = 'D:\ZOC_DATA\liver_disease2\models\\fundus\\all_scores\\'
-    name = 'fundus_0+6diseases'
+    root_slitlamp = ''
+    root_fundus = ''
+    name = ''
     diseases_types = ['Hepatobiliary Diseases','Liver cancer','Liver cirrhosis','Chronic viral Hepatitis',
                       'Nonalcoholic fatty liver disease','Cholelithiasis',
                       'Hepatic cyst']
     colors = ['crimson','chocolate','steelblue','rosybrown','darkkhaki','cadetblue','lightslategrey']
     # slitlamp
-    #confidence_set = [['0·71','0·76'],['0·91','0·94'], ['0·88','0·91'], ['0·66','0·71'], ['0·60','0·66'], ['0·55','0·61'], ['0·63','0·68']]
+    #confidence_set = []
     #all_roc_plot(root_slitlamp, name, diseases_types, colors, confidence_set)
 
     # fundus
-    confidence_set=[['0·65','0·71'],['0·81','0·86'],['0·81','0·86'],['0·58','0·65'],['0·67','0·73'],['0·65','0·71'],['0·65','0·72']]
+    confidence_set=[]
     all_roc_plot(root_fundus,name,diseases_types,colors,confidence_set)
 
 
     #from PIL import Image
-    #im = Image.open('./slitlamp_0+6diseases.tiff')
-    #im.save('slitlamp_0+6diseases1.tiff', dpi=(300.0, 300.0))
+    #im = Image.open('')
+    #im.save('', dpi=(300.0, 300.0))
     #plt.savefig()
-    #im.savefig('slitlamp_0+6diseases1.tiff', format='PDF', transparent=True, dpi=300, pad_inches=0)
+    #im.savefig('', format='PDF', transparent=True, dpi=300, pad_inches=0)
