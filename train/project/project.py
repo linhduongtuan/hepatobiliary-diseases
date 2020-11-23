@@ -109,9 +109,9 @@ class Project(object):
             transforms.Resize((self.config['image']['height'], self.config['image']['width'])),
             transforms.CenterCrop((self.config['image']['height'], self.config['image']['width'])),
             transforms.RandomHorizontalFlip(0.5),
-                 #transforms.RandomRotation(20, resample=PIL.Image.BILINEAR),
-                 #transforms.ColorJitter(hue=.05, saturation=.05),
-                 #transforms.RandomVerticalFlip(0.5),
+            transforms.RandomRotation(20, resample=PIL.Image.BILINEAR),
+            transforms.ColorJitter(hue=.05, saturation=.05),
+            transforms.RandomVerticalFlip(0.5),
             transforms.ToTensor(),
             transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])
         ])

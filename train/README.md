@@ -1,6 +1,6 @@
 ### auto train
 
-python run.py -c config3.json
+python run.py -c config.json
 
 #### Preparing the training dataset
 `python data/split_data.py -i data/data_list/case_file -o data/data_list/multi_data_list -svl True(split using every class，default value is True)`

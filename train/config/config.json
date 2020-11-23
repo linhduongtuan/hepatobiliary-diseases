@@ -2,7 +2,7 @@
   "name": "test",
   "train_list": "train_list.txt",
   "val_list": "val_list.txt",
-  "test_list": "val_list.txt",
+  "test_list": "",
   "data_path": "your_path2slitlamp",
   "type": "slitlamp",
 
@@ -26,10 +26,10 @@
     "epochs": 100
   },
   "test": {
-    "checkpoint": "resnet101_best_auc.pkl"
+    "checkpoint": "resnet101_best_f1.pkl"
   },
   "inference": {
-    "checkpoint": "resnet101_best_auc.pkl",
+    "checkpoint": "resnet101_best_f1.pkl",
     "data_path": "data/inference_example"
   }
 }
