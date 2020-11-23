@@ -12,8 +12,8 @@ def main(config):
     # project.split_data()
     print('start training')
     project.train()
-    print('start testing')
-    project.test()
+    print('start evaluating')
+    project.evaluate()
 
     print('train finished, start plotting log')
     project.plot_log()

@@ -161,9 +161,9 @@ class Predict(object):
             'f1': round(test_f1, 4),
             'confusion matrix': '[[{}, {}], [{}, {}]]'.format(test_cm[0, 0], test_cm[0, 1], test_cm[1, 0], test_cm[1, 1])
         }
-        if not os.path.exists(os.path.join(os.path.dirname(name), 'val_auc{}'.format(str(round(test_auc,2))))):
-            os.makedirs(os.path.join(os.path.dirname(name), 'val_auc{}'.format(str(round(test_auc,2)))))
-        with open(os.path.join(os.path.dirname(name), 'val_auc{}'.format(str(round(test_auc,2))),'val_results.json'), 'w') as f:
+        if not os.path.exists(os.path.join(os.path.dirname(name), 'test_auc{}'.format(str(round(test_auc,2))))):
+            os.makedirs(os.path.join(os.path.dirname(name), 'test_auc{}'.format(str(round(test_auc,2)))))
+        with open(os.path.join(os.path.dirname(name), 'test_auc{}'.format(str(round(test_auc,2))),'test_results.json'), 'w') as f:
             json.dump(test_result, f, indent=4)
 
 

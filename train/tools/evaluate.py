@@ -21,7 +21,7 @@ def avg_f1(targets, preds):
     return conf_mat, TPR, TNR, f1
 
 
-def evalute(epoch, epochs, model, loader, criterion, write_log='', _type='Val', draw_roc=False, title=None, name=None):
+def evaluate(epoch, epochs, model, loader, criterion, write_log='', _type='Val', draw_roc=False, title=None, name=None):
     begin = time.time()
     if write_log != '':
         logs = open(write_log, 'a')

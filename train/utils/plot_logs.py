@@ -12,15 +12,25 @@ def save_fig(train_log, val_log, title, _type, name, margin, point_type):
         y0 = train_log[np.argmin(train_log)]
         x1 = np.argmin(val_log)
         y1 = val_log[np.argmin(val_log)]
+
+        plt.plot([x0, x1], [y0, y1], 'o')
+        plt.annotate('min: ({}, {})'.format(x0, y0), xy=(x0, y0), xytext=(x0 + margin, y0 + margin),
+                     arrowprops=dict(arrowstyle="->"))
+        plt.annotate('min: ({}, {})'.format(x1, y1), xy=(x1, y1), xytext=(x1 + margin, y1 + margin),
+                     arrowprops=dict(arrowstyle="->"))
     else:
         x0 = np.argmax(train_log)
         y0 = train_log[np.argmax(train_log)]
         x1 = np.argmax(val_log)
         y1 = val_log[np.argmax(val_log)]
 
-    plt.plot([x0, x1], [y0, y1], 'o')
-    plt.annotate('min: ({}, {})'.format(x0, y0), xy=(x0, y0), xytext=(x0+margin, y0+margin), arrowprops=dict(arrowstyle="->"))
-    plt.annotate('min: ({}, {})'.format(x1, y1), xy=(x1, y1), xytext=(x1+margin, y1+margin), arrowprops=dict(arrowstyle="->"))
+        plt.plot([x0, x1], [y0, y1], 'o')
+        plt.annotate('max: ({}, {})'.format(x0, y0), xy=(x0, y0), xytext=(x0 + margin, y0 + margin),
+                     arrowprops=dict(arrowstyle="->"))
+        plt.annotate('max: ({}, {})'.format(x1, y1), xy=(x1, y1), xytext=(x1 + margin, y1 + margin),
+                     arrowprops=dict(arrowstyle="->"))
+
+
     #     plt.annotate(s="Nothing",  xytext=(x0+1, y0+1), xy=(x0, y0), arrowprops=dict(arrowstyle="->"))
     plt.legend()
     plt.xlabel('epoch')

@@ -163,7 +163,7 @@ class Project(object):
         with open(os.path.join('./results', self.config['name'], 'val_results.json'), 'w') as f:
             json.dump(result, f, indent=4)
 
-    def test(self):
+    def evaluate(self):
         self.load_state()
         os.makedirs(os.path.join('./results', self.config['name'], 'test'), exist_ok=True)
         test_transform = transforms.Compose([
@@ -174,7 +174,7 @@ class Project(object):
             transforms.Normalize([0.5, 0.5, 0.5], [0.5, 0.5, 0.5])
         ])
         testset = LiverSingleDataset(transform=test_transform, root=self.config['data_path'],
-                                     _type=self.config['type'], data_file=self.config['val_list'])
+                                     _type=self.config['type'], data_file=self.config['test_list'])
         testloader = _data.DataLoader(testset, shuffle=False,
                                       batch_size=self.config['model']['batch_size'],
                                       num_workers=self.config['model']['num_workers'])
@@ -182,7 +182,7 @@ class Project(object):
         title = self.config['name'] + '_' + self.config['model']['name']
         name = os.path.join('./results', self.config['name'], 'test',
                             self.config['test']['checkpoint'].replace('.pkl', ''))
-        test_acc, test_auc, test_sens, test_spec, test_f1, test_cm = evalute(0, 0, self.model,
+        test_acc, test_auc, test_sens, test_spec, test_f1, test_cm = evaluate(0, 0, self.model,
                                                                              testloader, self.criterion,
                                                                              _type='Test', draw_roc=True, title=title,
                                                                              name=name)
