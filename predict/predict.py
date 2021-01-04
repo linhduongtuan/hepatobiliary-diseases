@@ -18,7 +18,7 @@ import tools.gene_folder as gf
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('--config', '-c', type=str, default='config/slitlamp_test/config1.json', help='config file')
+parser.add_argument('--config', '-c', type=str, default='config/slitlamp_test/config.json', help='config file')
 args = parser.parse_args()
 
 
